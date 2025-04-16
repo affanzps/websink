@@ -1,0 +1,150 @@
+<div class="home-page">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Grow Your Business <span class="highlight">Like Never Before</span></h1>
+          <p class="hero-subtitle">Transform your business with powerful, modern software solutions tailored to your needs</p>
+          <div class="hero-cta">
+            <a href="#services" class="btn btn-primary">Explore Solutions</a>
+            <a href="#contact" class="btn btn-outline">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Software Solutions for Your Business</h2>
+        <p class="section-subtitle">Our software solutions are trusted by dozens of companies and hundreds of users use them every day</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card" *ngFor="let service of services">
+          <div class="service-icon">
+            <i [class]="service.icon"></i>
+          </div>
+          <h3 class="service-title">{{service.title}}</h3>
+          <p class="service-description">{{service.description}}</p>
+          <a [routerLink]="['/services', service.id]" class="service-link">
+            Learn More
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>We Help You Grow Faster</h2>
+        <p class="section-subtitle">Our professional teams possess vast experience in developing high-quality solutions for your business</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card" *ngFor="let feature of features">
+          <div class="feature-icon">
+            <i [class]="feature.icon"></i>
+          </div>
+          <h3>{{feature.title}}</h3>
+          <p>{{feature.description}}</p>
+        </div>
+      </div>
+
+      <div class="features-list">
+        <ul>
+          <li><i class="fas fa-check"></i> Excellent customer support</li>
+          <li><i class="fas fa-check"></i> Years of industry experience</li>
+          <li><i class="fas fa-check"></i> Custom software solutions</li>
+          <li><i class="fas fa-check"></i> Professional expertise</li>
+          <li><i class="fas fa-check"></i> Affordable solutions</li>
+          <li><i class="fas fa-check"></i> Dedicated support team</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <!-- <section class="featured-work" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <h2>They Believe in Us</h2>
+        <p class="section-subtitle">Success stories from our valued clients across different industries</p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card" *ngFor="let project of featuredProjects">
+          <div class="project-image">
+            <img [src]="project.image" [alt]="project.title">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">View Case Study</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">{{project.title}}</h3>
+            <p class="project-description">{{project.description}}</p>
+            <div class="project-tags">
+              <span class="tag" *ngFor="let tag of project.tags">{{tag}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Support Section -->
+  <section class="support">
+    <div class="container">
+      <div class="section-header">
+        <h2>High Quality Customer Support</h2>
+        <p class="section-subtitle">After-sale support is our key to success. We're always here to help you whenever you face any problem.</p>
+      </div>
+
+      <div class="support-points">
+        <div class="support-point">
+          <i class="fas fa-heart"></i>
+          <p>Your business is important for you, so is for us</p>
+        </div>
+        <div class="support-point">
+          <i class="fas fa-users"></i>
+          <p>We value our customers</p>
+        </div>
+        <div class="support-point">
+          <i class="fas fa-comments"></i>
+          <p>We love your feedback</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Let's discuss how we can help bring your ideas to life</p>
+        <a routerLink="/contact" class="btn btn-primary">Contact Us Today</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Highlight Section -->
+  <section class="statistics-highlight">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item" *ngFor="let stat of stats">
+          <div class="stat-number">{{ stat.number }}</div>
+          <div class="stat-caption">{{ stat.caption }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

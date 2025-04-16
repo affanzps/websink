@@ -1,0 +1,169 @@
+<!-- Portfolio Hero -->
+<section class="portfolio-hero">
+  <div class="container">
+    <h1>Data Analytics Portfolio</h1>
+    <p class="lead">Transforming Data into Actionable Insights</p>
+    <p class="intro">Explore our collection of data analytics and visualization projects, showcasing how we help businesses make data-driven decisions through powerful dashboards.</p>
+  </div>
+</section>
+
+<!-- Portfolio Filters -->
+<section class="portfolio-filters">
+  <div class="container">
+    <div class="filters-wrapper">
+      <div class="filter-group">
+        <label>Filter by Tool:</label>
+        <button [ngClass]="{'active': selectedTool === 'all'}" (click)="filterProjects('all')">All</button>
+        <button [ngClass]="{'active': selectedTool === 'powerbi'}" (click)="filterProjects('powerbi')">Power BI</button>
+        <button [ngClass]="{'active': selectedTool === 'tableau'}" (click)="filterProjects('tableau')">Tableau</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Grid -->
+<section class="portfolio-grid">
+  <div class="container">
+    <div class="projects-grid">
+      <!-- Retail Sales Analytics Dashboard -->
+      <div class="project-card" [class.visible]="isProjectVisible('powerbi')">
+        <div class="project-thumbnail">
+          <img src="assets/images/portfolio/retail-sales.jpg" alt="Retail Sales Analytics Dashboard">
+          <div class="project-overlay">
+            <button class="preview-btn" (click)="openPreview('retail-sales')">
+              <i class="fas fa-eye"></i> Live Preview
+            </button>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <h3>Retail Sales Analytics Dashboard</h3>
+            <div class="project-tags">
+              <span class="tool-tag">Power BI</span>
+            </div>
+          </div>
+          <div class="project-details">
+            <div class="detail-section">
+              <h4>Challenge</h4>
+              <p>A retail chain needed real-time insights into sales performance across multiple stores.</p>
+            </div>
+            <div class="detail-section">
+              <h4>Solution</h4>
+              <p>Created an interactive Power BI dashboard with drill-down capabilities and predictive analytics.</p>
+            </div>
+            <div class="detail-section">
+              <h4>Outcome</h4>
+              <p>20% improvement in inventory management and 15% increase in sales through data-driven decisions.</p>
+            </div>
+          </div>
+          <div class="project-actions">
+            <button class="btn btn-primary" (click)="openPreview('retail-sales')">View Dashboard</button>
+            <button class="btn btn-outline" (click)="downloadCaseStudy('retail-sales')">Download Case Study</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- E-commerce Analytics Dashboard -->
+      <div class="project-card" [class.visible]="isProjectVisible('powerbi')">
+        <div class="project-thumbnail">
+          <img src="assets/images/portfolio/ecommerce.jpg" alt="E-commerce Analytics Dashboard">
+          <div class="project-overlay">
+            <button class="preview-btn" (click)="openPreview('ecommerce')">
+              <i class="fas fa-eye"></i> Live Preview
+            </button>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <h3>Product & Customer Insights Dashboard</h3>
+            <div class="project-tags">
+              <span class="tool-tag">Power BI</span>
+            </div>
+          </div>
+          <div class="project-details">
+            <div class="detail-section">
+              <h4>Challenge</h4>
+              <p>An e-commerce platform struggled to understand customer behavior and product performance.</p>
+            </div>
+            <div class="detail-section">
+              <h4>Solution</h4>
+              <p>Developed a comprehensive dashboard integrating customer segmentation and product analytics.</p>
+            </div>
+            <div class="detail-section">
+              <h4>Outcome</h4>
+              <p>30% increase in customer retention and 25% growth in average order value.</p>
+            </div>
+          </div>
+          <div class="project-actions">
+            <button class="btn btn-primary" (click)="openPreview('ecommerce')">View Dashboard</button>
+            <button class="btn btn-outline" (click)="downloadCaseStudy('ecommerce')">Download Case Study</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tableau Visuals Collection -->
+      <div class="project-card" [class.visible]="isProjectVisible('tableau')">
+        <div class="project-thumbnail">
+          <img src="assets/images/portfolio/tableau.jpg" alt="Interactive Tableau Visuals">
+          <div class="project-overlay">
+            <button class="preview-btn" (click)="openPreview('tableau-collection')">
+              <i class="fas fa-eye"></i> Live Preview
+            </button>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <h3>Interactive Tableau Visuals Collection</h3>
+            <div class="project-tags">
+              <span class="tool-tag">Tableau</span>
+            </div>
+          </div>
+          <div class="project-details">
+            <div class="detail-section">
+              <h4>Challenge</h4>
+              <p>Financial institution needed better visualization of market trends and portfolio performance.</p>
+            </div>
+            <div class="detail-section">
+              <h4>Solution</h4>
+              <p>Created a suite of interactive Tableau visualizations with real-time market data integration.</p>
+            </div>
+            <div class="detail-section">
+              <h4>Outcome</h4>
+              <p>40% faster decision-making process and improved portfolio optimization strategies.</p>
+            </div>
+          </div>
+          <div class="project-actions">
+            <button class="btn btn-primary" (click)="openPreview('tableau-collection')">View Dashboard</button>
+            <button class="btn btn-outline" (click)="downloadCaseStudy('tableau-collection')">Download Case Study</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Preview Modal -->
+<div class="preview-modal" [class.active]="previewActive">
+  <div class="modal-content">
+    <button class="close-btn" (click)="closePreview()">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="dashboard-preview">
+      <iframe *ngIf="currentPreviewUrl" [src]="currentPreviewUrl || '' | safe:'resourceUrl'" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Call to Action -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to Transform Your Data?</h2>
+      <p>Let's create custom dashboards that drive your business forward.</p>
+      <div class="cta-buttons">
+        <a routerLink="/contact" class="btn btn-primary">Schedule Consultation</a>
+        <a routerLink="/services" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,98 @@
+<div class="about-page">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>{{ tagline }}</h1>
+        <p class="hero-subtitle">Transforming digital landscapes with innovative software solutions</p>
+        <div class="hero-cta">
+          <a routerLink="/contact" class="btn btn-primary">Get in Touch</a>
+          <a routerLink="/services" class="btn btn-outline">View Our Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Overview -->
+  <section class="company-overview">
+    <div class="container">
+      <div class="section-header">
+        <h2>Who We Are</h2>
+      </div>
+      <div class="overview-content">
+        <p>{{ companyOverview }}</p>
+        
+        <div class="services-list">
+          <h3>Our Key Services</h3>
+          <ul>
+            <li *ngFor="let service of services">{{ service }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission and Vision -->
+  <section class="mission-vision">
+    <div class="container">
+      <div class="row">
+        <div class="mission-block">
+          <h2>Our Mission</h2>
+          <p>{{ mission }}</p>
+        </div>
+        <div class="vision-block">
+          <h2>Our Vision</h2>
+          <p>{{ vision }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values -->
+  <section class="our-values">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Core Values</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card" *ngFor="let value of values">
+          <h3>{{ value.title }}</h3>
+          <p>{{ value.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Highlight -->
+  <section class="team-highlight">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Team</h2>
+      </div>
+      <p>{{ teamHighlight }}</p>
+    </div>
+  </section>
+
+  <!-- Statistics Highlight -->
+  <section class="statistics-highlight">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item" *ngFor="let stat of stats">
+          <div class="stat-number">{{ stat.number }}</div>
+          <div class="stat-caption">{{ stat.caption }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>{{ ctaHeading }}</h2>
+        <p>Ready to transform your business with cutting-edge software solutions?</p>
+        <a routerLink="/contact" class="btn btn-primary">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</div>

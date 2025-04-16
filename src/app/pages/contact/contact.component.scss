@@ -1,0 +1,206 @@
+@import '../../shared/styles/shared';
+
+.contact-page {
+  // Hero Section
+  .hero {
+    @include section-padding;
+    background: linear-gradient(135deg, var(--dark-color), var(--bg-dark));
+    color: white;
+    text-align: center;
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: var(--spacing-md);
+        line-height: 1.2;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-light);
+      }
+    }
+  }
+
+  // Contact Information Section
+  .contact-info {
+    @include section-padding;
+    background: var(--dark-color);
+    color: white;
+
+    .contact-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-xl);
+      
+      @media (max-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 576px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.05);
+      padding: var(--spacing-lg);
+      border-radius: var(--border-radius-lg);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-10px);
+      }
+
+      .contact-icon {
+        margin-right: var(--spacing-lg);
+        font-size: 2.5rem;
+        color: var(--primary-color);
+      }
+
+      .contact-text {
+        h3 {
+          margin-bottom: var(--spacing-sm);
+          color: white;
+        }
+
+        p, small {
+          color: var(--text-light);
+        }
+
+        .contact-link {
+          color: var(--primary-color);
+          text-decoration: none;
+          cursor: pointer;
+          font-weight: 600;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  // Contact Form Section
+  .contact-form {
+    @include section-padding;
+    background: linear-gradient(135deg, var(--dark-color), #1e293b);
+
+    .form {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.05);
+      padding: var(--spacing-xl);
+      border-radius: var(--border-radius-lg);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-lg);
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+
+      .full-width {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: var(--spacing-md);
+
+      label {
+        margin-bottom: var(--spacing-sm);
+        color: white;
+      }
+
+      input, textarea {
+        padding: var(--spacing-sm);
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(255,255,255,0.05);
+        color: white;
+        border-radius: var(--border-radius-md);
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: var(--primary-color);
+        }
+
+        &.invalid {
+          border-color: var(--error-color);
+        }
+      }
+
+      .error-message {
+        color: var(--error-color);
+        margin-top: var(--spacing-sm);
+        font-size: 0.875rem;
+      }
+    }
+
+    .submission-confirmation {
+      background: rgba(0,255,0,0.1);
+      color: var(--success-color);
+      padding: var(--spacing-md);
+      text-align: center;
+      margin-top: var(--spacing-md);
+      border-radius: var(--border-radius-md);
+    }
+
+    button {
+      width: 100%;
+      margin-top: var(--spacing-lg);
+    }
+  }
+
+  // Call to Action Section
+  .cta {
+    @include section-padding;
+    background: var(--dark-color);
+    text-align: center;
+
+    .cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+
+      h2 {
+        color: white;
+        margin-bottom: var(--spacing-lg);
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-md);
+
+        @media (max-width: 576px) {
+          flex-direction: column;
+        }
+
+        .btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: var(--spacing-sm);
+
+          i {
+            font-size: 1.25rem;
+          }
+        }
+      }
+    }
+  }
+}

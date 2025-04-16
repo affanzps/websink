@@ -1,0 +1,33 @@
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a routerLink="/" class="logo">
+        <span>Websink</span>
+      </a>
+      <div class="nav-links">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a routerLink="/about" routerLinkActive="active">About</a>
+        <a routerLink="/services" routerLinkActive="active">Services</a>
+        <a routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
+        <a routerLink="/industries" routerLinkActive="active">Industries</a>
+        <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      </div>
+      <button class="mobile-menu-btn" (click)="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu" [class.active]="isMobileMenuOpen">
+  <div class="mobile-links">
+    <a routerLink="/" (click)="closeMobileMenu()">Home</a>
+    <a routerLink="/about" (click)="closeMobileMenu()">About</a>
+    <a routerLink="/services" (click)="closeMobileMenu()">Services</a>
+    <a routerLink="/portfolio" (click)="closeMobileMenu()">Portfolio</a>
+    <a routerLink="/industries" (click)="closeMobileMenu()">Industries</a>
+    <a routerLink="/contact" (click)="closeMobileMenu()">Contact</a>
+  </div>
+</div>
