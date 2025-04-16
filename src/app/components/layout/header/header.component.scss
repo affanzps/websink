@@ -16,12 +16,18 @@
   
   .logo {
     text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    
-    span {
-      color: var(--primary-color);
+    display: flex;
+    align-items: center;
+
+    .logo-image {
+      height: 50px; // Adjust based on your design
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
     }
   }
   

@@ -82,12 +82,17 @@
     align-items: center;
     justify-content: space-between;
   }
+  .brand-logo {
+    max-width: 100px; /* Adjust the size of the logo */
+    height: auto;     /* Maintain aspect ratio */
+  }
+
 
   .brand {
     text-decoration: none;
     display: flex;
     align-items: center;
-    
+
     .brand-name {
       font-size: var(--font-size-xl);
       font-weight: 700;
@@ -196,7 +201,7 @@
       ul {
         flex-direction: column;
         gap: 1.5rem;
-        
+
         a {
           font-size: var(--font-size-lg);
           padding-bottom: 0;
